@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    width: 100%;
+}
+
+.testing-container,
+.results-container {
+    width: 50%;
+    text-align: center;
+}
+
+.results-container {
+    background-color: #000;
+    color: #fff;
+}
