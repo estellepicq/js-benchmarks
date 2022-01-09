@@ -19,6 +19,10 @@
             <button onclick="onClick(cloneWithSpreadOperator, objectsArray, 'Spread operator method')">Spread operator method</button>
             <button onclick="onClick(cloneWithJsonStringify, objectsArray, 'JSON Stringify method')">JSON Stringify method</button>
             <button onclick="onClick(cloneDeepWithLodash, objectsArray, 'Lodash CloneDeep method')">Lodash CloneDeep method</button>
+            <button onclick="onClick(cloneNative, objectsArray, 'Native method')" disabled>Native method*</button>
+            <p>* Native method is not supported except in FF94 for now
+                (more details at <a href="https://developer.mozilla.org/en-US/docs/Web/API/structuredClone">structuredClone</a>)
+            </p>
         </div>
 
         <div class="results-container">

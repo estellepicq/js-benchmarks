@@ -18,7 +18,10 @@ function averageResults(callback, array, name) {
         for (let j = 0; j < trials; j++) {
             // Before function execution
             const t0 = performance.now();
-            callback(elements);
+            for (let k = 0; k < elements.length; k++) {
+                callback(elements[k]);
+            }
+            // callback(elements);
             // After function execution
             const t1 = performance.now();
             times.push(t1 - t0);
