@@ -1,25 +1,24 @@
 const resultsSection = document.getElementById('results');
 
-// Define a method that creates an array of random number
-const randomArray = (length, max) => [...new Array(length)].map(() => Math.round(Math.random() * max));
+// Define a method that creates an array of random number / objects
+const randomArray = (length, content) => {
+    return [...new Array(length)].map(() => content());
+};
 
-// Create 3 array (small, medium, large)
-const numbersArray = [
-    randomArray(100, 100),
-    randomArray(1000, 100),
-    randomArray(10000, 100)
-];
+function randomNumber() {
+    return Math.round(Math.random() * 100);
+}
 
-function averageResults(callback, name) {
+function averageResults(callback, array, name) {
     resultsSection.innerHTML += `<h2>${name}</h2>`;
     const trials = 10;
-    for (let i = 0; i < numbersArray.length; i++) {
-        const numbers = numbersArray[i];
+    for (let i = 0; i < array.length; i++) {
+        const elements = array[i];
         const times = [];
         for (let j = 0; j < trials; j++) {
             // Before function execution
             const t0 = performance.now();
-            callback(numbers);
+            callback(elements);
             // After function execution
             const t1 = performance.now();
             times.push(t1 - t0);
@@ -28,7 +27,7 @@ function averageResults(callback, name) {
         let average = times.reduce((acc, curr) => acc + curr, 0) / times.length;
         average = round(average, 1000000);
         // Log average and array length
-        const result = `${name}: Array of ${numbers.length} elements has been treated in ${average} ms`;
+        const result = `${name}: Array of ${elements.length} elements has been treated in ${average} ms`;
         console.log(result);
         // Print result in #results section
         resultsSection.innerHTML += `<div>${result}</div>`;
@@ -40,8 +39,8 @@ function round(number, mult) {
 }
 
 // On button click
-function onClick(callback, name) {
-    averageResults(callback, name);
+function onClick(callback, array, name) {
+    averageResults(callback, array, name);
 }
 
 function reset() {

@@ -20,3 +20,10 @@ function uniqueArray2(arr) {
 function uniqueArray3(arr) {
     return [...new Set(arr)];
 }
+
+// Create 3 number arrays (small, medium, large)
+const numbersArray = [
+    randomArray(100, randomNumber),
+    // randomArray(100000),
+    // randomArray(100000000)
+];

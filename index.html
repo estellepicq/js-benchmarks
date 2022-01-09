@@ -11,14 +11,14 @@
 
         <div class="testing-container">
             <h1>Testing Duplicate methods</h1>
-            <button onclick="onClick(uniqueArray1, 'Classic method')">Classic method</button>
-            <button onclick="onClick(uniqueArray2, 'filter() method')">filter() method</button>
-            <button onclick="onClick(uniqueArray3, 'Set method')">Set method</button>
+            <button onclick="onClick(uniqueArray1, numbersArray, 'Classic method')">Classic method</button>
+            <button onclick="onClick(uniqueArray2, numbersArray, 'filter() method')">filter() method</button>
+            <button onclick="onClick(uniqueArray3, numbersArray, 'Set method')">Set method</button>
 
             <h1>Testing Clone methods</h1>
-            <button onclick="onClick(cloneWithSpreadOperator, 'Spread operator method')">Spread operator method</button>
-            <button onclick="onClick(cloneWithJsonStringify, 'JSON Stringify method')">JSON Stringify method</button>
-            <button onclick="onClick(cloneDeepWithLodash, 'Lodash CloneDeep method')">Lodash CloneDeep method</button>
+            <button onclick="onClick(cloneWithSpreadOperator, objectsArray, 'Spread operator method')">Spread operator method</button>
+            <button onclick="onClick(cloneWithJsonStringify, objectsArray, 'JSON Stringify method')">JSON Stringify method</button>
+            <button onclick="onClick(cloneDeepWithLodash, objectsArray, 'Lodash CloneDeep method')">Lodash CloneDeep method</button>
         </div>
 
         <div class="results-container">
